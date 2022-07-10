@@ -1,0 +1,155 @@
+// ========== NAVEGATION BAR ==========
+.navbar {
+    @include size(100%, $navbar-size);
+    background-color: $color-white;
+    // box-shadow: $shadow;
+
+    ul {
+        @include size(100%, 100%);
+        @include flex-row(center, space-evenly);
+
+        .active {
+            background-color: $color-lightblue;
+            color: $color-black;
+        }
+
+    }
+}
+// ====================================
+
+// ========== CONTAINER ==========
+// Container
+.container {
+    @include size(100%, max-content);
+    @include flex-col(flex-start, flex-start);
+    gap: $gap /2;
+}
+
+// Grid
+.grid {
+    @include size(100%, max-content);
+    display: grid;
+
+    &-col-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &-col-5 {
+        grid-template-columns: repeat(5,1fr);
+    }
+
+}
+
+// Flex
+.flex {
+    @include size(100%, max-content);
+    display: flex;
+
+    &-col {
+        flex-direction: column;
+    }
+}
+
+// Gap
+.gap-s {
+    gap: $gap /2;
+}
+
+.gap-m {
+    gap: $gap;
+}
+
+.gap-l {
+    gap: $gap *2;
+}
+// ===============================
+
+// ========== ITEMS ==========
+.item {
+    @include size(100%, max-content);
+    background-color: $color-white;
+    border-radius: $radius-btn;
+    padding: 1rem;
+
+    &-category {
+        @include flex-col(flex-start, flex-start);
+
+        h3 {
+            color: $color-blue;
+        }
+    }
+
+    &-task {
+        @include flex-row(center, space-between);
+        gap: $gap;
+    }
+}
+// ===========================
+
+// ========== BUTTONS ==========
+.btn {
+    // border: $crimson;
+    @include center;
+    @include size(max-content, 3rem);
+    min-width: 3rem;
+    font-family: $font-sec;
+
+    &-pri {
+        border-radius: 50%;
+        background-color: $color-blue;
+        color: $color-white;
+    }
+
+    &-ter {
+        border: $crimson;
+    }
+}
+// =============================
+
+// ========== LINKS ==========
+.link {
+    color: $color-gray;
+    transition: $transition;
+
+    &-btn {
+        @include size(3.5rem, 3.5rem);
+        @include center;
+        border-radius: $radius-btn;
+
+        &:hover {
+            background-color: $color-lightblue;
+            color: $color-black;
+        }
+
+    }
+
+}
+// ===========================
+
+// ========== FONT SIZE ==========
+.fs-s {
+    font-size: $font-s;
+}
+
+.fs-m {
+    font-size: $font-m;
+}
+
+.fs-l {
+    font-size: $font-l;
+}
+// ===============================
+
+// ========== Headings ==========
+.title {}
+
+.subtitle {
+    color: $color-gray;
+    font-size: $font-m;
+    text-transform: uppercase;
+}
+// ==============================
+
+// Debug
+.debug {
+    border: $crimson;
+}

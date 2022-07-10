@@ -1,0 +1,40 @@
+// ========== FONTS ==========
+// Font family
+$font-pri: 'Mulish',
+    sans-serif;
+$font-sec: 'Poppins',
+    sans-serif;
+// Font weight
+$font-reg: 400;
+$font-med: 700;
+$font-bol: 900;
+// Font size
+$font-s: .8rem;
+$font-m: 1rem;
+$font-l: 1.5rem;
+// ===========================
+// ========== COLORS ==========
+$color-blue: rgba(54, 97, 235, 1);
+$color-lightblue: rgba(154, 205, 228, 1);
+$color-extralightblue: rgba(225, 230, 247, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-black: rgba(54, 54, 54, 1);
+$color-gray: rgba(129, 136, 142, 1);
+$color-lightgray: rgba(209, 213, 227, 1);
+
+// ============================
+// ========== SIZES ==========
+$header-size: 10vh;
+$navbar-size: 10vh;
+$radius-btn: 1rem;
+// ===========================
+// ========== CONTAINER ==========
+$gap: 1rem;
+// ===============================
+
+// Shadow
+$shadow: 1rem 1rem 1rem $color-gray;
+// Transition
+$transition: .5s;
+// Debug
+$crimson: .1rem solid crimson;
