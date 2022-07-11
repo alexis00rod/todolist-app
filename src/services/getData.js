@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
@@ -12,10 +12,15 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app)
 
-export const auth = getAuth(app)
-// export const db = getFirestore(app)
+export const signupAuth = (email,password) => createUserWithEmailAndPassword(auth,email,password) 
 
-export const signup = (email,password) => {
-    return createUserWithEmailAndPassword(auth,email,password) 
-}
+export const loginAuth = (email,password) => signInWithEmailAndPassword(auth,email,password)
+
+export const loginChanged = (setUser,setLoading) => onAuthStateChanged(auth, currentUser => {
+    setUser(currentUser)
+    setLoading(true)
+})
+export const logout = signOut(auth)
+

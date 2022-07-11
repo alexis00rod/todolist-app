@@ -27,18 +27,21 @@ export const Signup = () => {
 
     return (
         <main>
-            <h1>Signup</h1>
             <section>
-                {
-                    signup && <p>{signup}</p> 
-                }
-                <form className="flex flex-col ali-center gap-m" onSubmit={signupUser}>
-                    <input type="email" name="email" placeholder='Enter your email' className='input' onChange={handleUserToSignup} />
-                    <input type="password" name="password" placeholder='Enter your password' className='input' onChange={handleUserToSignup} />
-                    <button className="btn btn-pri"><span>Signup</span></button>
-                </form>
-                <div>
-                    <p>Do you already have an account created?<Link to="/login">Log in</Link></p>
+                <div className='container'>
+                    <h2 className='title txt-cen m-bot-m'>Sign up</h2>
+                    {
+                        signup && <p>{signup}</p> 
+                    }
+                    <form className="flex flex-col ali-center gap-m m-bot-l" onSubmit={signupUser}>
+                        <input type="email" name="email" placeholder='Enter your email' className='input' onChange={handleUserToSignup} required/>
+                        <input type="password" name="password" placeholder='Enter your password' className='input' onChange={handleUserToSignup} required/>
+                        <button className="btn btn-pri fs-m"><span>Sign up</span></button>
+                    </form>
+                    <div className='flex flex-col ali-center gap-s'>
+                        <p>already have an account?</p>
+                        <Link to="/login" className='btn btn-sec fs-m'>Log in</Link>
+                    </div>
                 </div>
             </section>
         </main>
