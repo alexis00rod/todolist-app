@@ -4,7 +4,7 @@ import { login, loginAuth } from '../../services/getData'
 
 export const Login = () => {
     const [userToLogin, setUserToLogin] = useState({})
-    const [login, setLogin] = useState()
+    const [loginError, setLoginError] = useState()
     const navigate = useNavigate()
 
     const loginUser = async (e) => {
@@ -13,7 +13,7 @@ export const Login = () => {
             await loginAuth(userToLogin.email,userToLogin.password)
             navigate('/')
         } catch (err) {
-            setLogin(err.code)
+            setLoginError(err.code)
         }
     }
 
@@ -25,12 +25,14 @@ export const Login = () => {
     }
 
     return (
-        <main>
+        <main >
             <section>
                 <div className='container'>
-                    <h2 className='title txt-cen m-bot-m'>Log in</h2>
+                    <h2 className='title m-bot-m'>Log in</h2>
                     {
-                        login && <p>{login}</p>
+                        loginError && <div className='msg msg-error'>
+                                        <span>{loginError}.</span>
+                                    </div>
                     }
                     <form className="flex flex-col ali-center gap-m m-bot-l" onSubmit={loginUser}>
                         <input type="email" name="email" placeholder='Enter your email' className='input' onChange={handleUser} required/>

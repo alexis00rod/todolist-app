@@ -5,16 +5,16 @@ import { useState } from 'react'
 
 export const Signup = () => {
     const [userToSignup, setUserToSignup] = useState({})
-    const [signup, setSignup] = useState()
+    const [signupError, setSignupError] = useState()
     const navigate = useNavigate()
 
     const signupUser = async (e) => {
         e.preventDefault()
         try {
             await signupAuth(userToSignup.email,userToSignup.password)
-            navigate("/login")
+            navigate('/login')
         } catch (err) {
-            setSignup(err.code)
+            setSignupError(err.code)
         }
     }
 
@@ -28,10 +28,13 @@ export const Signup = () => {
     return (
         <main>
             <section>
-                <div className='container'>
-                    <h2 className='title txt-cen m-bot-m'>Sign up</h2>
+                <div className='container p-top-l'>
+                    <h2 className='title m-bot-m'>Sign up</h2>
                     {
-                        signup && <p>{signup}</p> 
+                        signupError 
+                        && <div className='msg msg-error'>
+                            <span>{signupError}.</span>
+                            </div>
                     }
                     <form className="flex flex-col ali-center gap-m m-bot-l" onSubmit={signupUser}>
                         <input type="email" name="email" placeholder='Enter your email' className='input' onChange={handleUserToSignup} required/>
