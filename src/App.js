@@ -1,13 +1,17 @@
 import {Outlet} from "react-router-dom"
-import { Header } from "./components/Header/Header";
 import { Navbar } from "./components/Navbar/Navbar";
+import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { UserContextProvider } from "./context/UserContext";
 
 export const App = () => {
     return (
         <>
-            <Header />
+        <UserContextProvider>
+        <ProtectedRoute>
             <Outlet />
             <Navbar />
+        </ProtectedRoute>
+        </UserContextProvider>
         </>
   );
 }
