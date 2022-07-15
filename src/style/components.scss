@@ -1,0 +1,93 @@
+// // ========== MENU ==========
+.menu {
+    position: absolute;
+    top: calc(100% + .3rem);
+    right: 0;
+    @include size(100,max-content);
+    min-width: 12.5rem;
+    background-color: $color-white;
+    border-radius: $radius-btn;
+    overflow: hidden;
+    &__item {
+        @include size(100%,max-content);
+        min-height: 3rem;
+        @include flex-row(center, flex-start);
+    }
+}
+// ==========================
+
+// ========== BUTTONS ==========
+.btn {
+    @include center;
+    // @include size(100%, max-content);
+    max-width: 18.75rem;
+    min-width: 3rem;
+    min-height: 3rem;
+    font-family: $font-sec;
+    // border-radius: $radius-btn;
+    transition: $transition;
+
+    &-pri {
+        background-color: $color-blue;
+        color: $color-white;
+    }
+
+    &-sec {
+        background-color: $color-lightblue;
+        color: $color-white;
+    }
+
+    &-ter {
+        color: $color-gray;
+        font-size: $font-m;
+        &:hover {
+            background-color: $color-lightblue;
+            color: $color-black;
+        }
+    }
+    &-for {
+        max-width: 3rem;
+        color: $color-gray;
+        background-color: transparent;
+        &:hover {
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+    &--primary {
+        background-color: $color-blue;
+        color: $color-white;
+    }
+    &--menu {
+        max-width: 6rem;
+        padding: $p-s $p-m;
+        @include flex-row(center,center);
+        gap: $gap /2;
+    }
+    &--link {
+        // border: $crimson;
+        @include size(100%,max-content);
+        color: $color-gray; 
+        // @include flex-row(center, center);
+        gap: $gap /2;
+        &:hover {
+            background-color: $color-lightblue;
+            color: $color-black;
+        }
+    }
+    &__txt {
+        padding: 0 $p-m;
+        @include flex-row(center, flex-start);
+        border-radius: $radius-btn;
+    }
+    &__ico {
+        max-width: 3rem;
+        max-height: 3rem;
+        border-radius: $radius-btn;
+    }
+    &__icotxt {
+        padding: 0 $p-m;
+        @include flex-row(center, flex-start);
+    }
+}
+// =============================
